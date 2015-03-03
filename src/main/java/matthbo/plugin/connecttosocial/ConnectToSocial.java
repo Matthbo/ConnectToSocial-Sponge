@@ -1,6 +1,7 @@
 package matthbo.plugin.connecttosocial;
 
 import com.google.inject.Inject;
+import matthbo.plugin.connecttosocial.command.CommandSocial;
 import org.slf4j.Logger;
 import org.spongepowered.api.Game;
 import org.spongepowered.api.event.state.ServerStartingEvent;
@@ -29,7 +30,7 @@ public class ConnectToSocial {
         instance = this;
 
         CommandService cmdService = getGame().getCommandDispatcher();
-
+        cmdService.register(instance, new CommandSocial(), "social");
 
         getLogger().info("ConnectToSocial has been Activated");
     }
