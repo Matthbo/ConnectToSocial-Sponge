@@ -29,14 +29,14 @@ public class ConnectToSocial {
         instance = this;
 
         CommandService cmdService = getGame().getCommandDispatcher();
-        
 
-        getLogger().info("");
+
+        getLogger().info("ConnectToSocial has been Activated");
     }
 
     @Subscribe
     public void onDisabled(ServerStoppingEvent event){
-        getLogger().info("");
+        getLogger().info("ConnectToSocial is Disconnected from the Internet!");
     }
 
     public Logger getLogger() {
