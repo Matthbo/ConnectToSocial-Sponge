@@ -12,6 +12,7 @@ import org.spongepowered.api.util.command.CommandException;
 import org.spongepowered.api.util.command.CommandSource;
 
 import java.io.*;
+import java.util.Collections;
 import java.util.List;
 
 public class CommandSocial implements CommandCallable {
@@ -239,23 +240,25 @@ public class CommandSocial implements CommandCallable {
 
     @Override
     public Optional<String> getShortDescription() {
-        return null;
+        return desc;
     }
 
     @Override
     public Optional<String> getHelp() {
-        return null;
-    }
+        return desc;
+    } //TODO check if changes need to be made!
 
     @Override
     public String getUsage() {
-        return null;
+        return Refs.Usage;
     }
 
     @Override
     public List<String> getSuggestions(CommandSource source, String arguments) throws CommandException {
-        return null;
+        return Collections.emptyList();
     }
+
+    private final Optional<String> desc = Optional.of("View someones SocialMedia via URLs");
 
     private Message wrngSender(){
         return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder("Player Command Only!").color(TextColors.RED).build()).build();

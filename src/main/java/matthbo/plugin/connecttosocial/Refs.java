@@ -7,4 +7,6 @@ public class Refs {
 
     public static final String pluginMSG = "[ConnectToSocial] ";
 
+    public static final String Usage = "/<command> <message>";
+
 }
