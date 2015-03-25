@@ -4,9 +4,9 @@ import com.google.common.base.Optional;
 import matthbo.plugin.connecttosocial.ConnectToSocial;
 import matthbo.plugin.connecttosocial.Refs;
 import org.spongepowered.api.entity.player.Player;
+import org.spongepowered.api.text.Text;
+import org.spongepowered.api.text.Texts;
 import org.spongepowered.api.text.format.TextColors;
-import org.spongepowered.api.text.message.Message;
-import org.spongepowered.api.text.message.Messages;
 import org.spongepowered.api.util.command.CommandCallable;
 import org.spongepowered.api.util.command.CommandException;
 import org.spongepowered.api.util.command.CommandSource;
@@ -43,12 +43,12 @@ public class CommandSocial implements CommandCallable {
         }catch(Exception e){e.printStackTrace();}
     }
 
-    private Message playersMedia(String target){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder(target).color(TextColors.RESET).append(Messages.builder("'s Social Media:").build()).build()).build();
+    private Text playersMedia(String target){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder(target).color(TextColors.RESET).append(Texts.builder("'s Social Media:").build()).build()).build();
     }
 
-    private Message noList(){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.of("Nothing!")).build();
+    private Text noList(){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.of("Nothing!")).build();
     }
 
     public void MediaCMD(String url, String playerName, String medium){
@@ -260,31 +260,31 @@ public class CommandSocial implements CommandCallable {
 
     private final Optional<String> desc = Optional.of("View someones SocialMedia via URLs");
 
-    private Message wrngSender(){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder("Player Command Only!").color(TextColors.RED).build()).build();
+    private Text wrngSender(){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder("Player Command Only!").color(TextColors.RED).build()).build();
     }
 
-    private Message media1(){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder("---[Media]---").color(TextColors.RESET).build()).build();
+    private Text media1(){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder("---[Media]---").color(TextColors.RESET).build()).build();
     }
 
-    private Message media2(){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder("youtube, twitch, twitter, facebook, skype, instagram, steam, email").color(TextColors.BLUE).build()).build();
+    private Text media2(){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder("youtube, twitch, twitter, facebook, skype, instagram, steam, email").color(TextColors.BLUE).build()).build();
     }
 
-    private Message usage(String usage){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder(usage).color(TextColors.RED).build()).build();
+    private Text usage(String usage){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder(usage).color(TextColors.RED).build()).build();
     }
 
-    private Message example(String example){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder("Example: ").color(TextColors.RED).append(Messages.builder(example).color(TextColors.BLUE).build()).build()).build();
+    private Text example(String example){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder("Example: ").color(TextColors.RED).append(Texts.builder(example).color(TextColors.BLUE).build()).build()).build();
     }
 
-    private Message setTo(String msg1, String msg2){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder(msg1).color(TextColors.RESET).append(Messages.builder(msg2).color(TextColors.BLUE).build()).build()).build();
+    private Text setTo(String msg1, String msg2){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder(msg1).color(TextColors.RESET).append(Texts.builder(msg2).color(TextColors.BLUE).build()).build()).build();
     }
 
-    private  Message supported(String msg1, String msg2){
-        return Messages.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Messages.builder(msg1).color(TextColors.RED).append(Messages.builder(msg2).color(TextColors.BLUE).build()).build()).build();
+    private  Text supported(String msg1, String msg2){
+        return Texts.builder(Refs.pluginMSG).color(TextColors.DARK_GREEN).append(Texts.builder(msg1).color(TextColors.RED).append(Texts.builder(msg2).color(TextColors.BLUE).build()).build()).build();
     }
 }
