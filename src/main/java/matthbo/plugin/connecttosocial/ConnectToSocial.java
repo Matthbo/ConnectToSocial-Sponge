@@ -8,7 +8,7 @@ import org.spongepowered.api.event.state.ServerStartingEvent;
 import org.spongepowered.api.event.state.ServerStoppingEvent;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.service.command.CommandService;
-import org.spongepowered.api.util.event.Subscribe;
+import org.spongepowered.api.event.Subscribe;
 
 import java.io.File;
 
